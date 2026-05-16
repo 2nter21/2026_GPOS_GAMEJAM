@@ -13,4 +13,9 @@ public class TeamRecipe : ScriptableObject
     
     [Header("CPS")]
     public float cpsReward;
+
+    [Header("ScrollCard")]
+    public GameObject TeamCardImage;
+
+    public int teamCount = 0;
 }
