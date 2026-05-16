@@ -17,5 +17,10 @@ public class TeamRecipe : ScriptableObject
     [Header("ScrollCard")]
     public GameObject TeamCardImage;
 
-    public int teamCount = 0;
+    public int teamCount;
+
+    void OnEnable()
+    {
+        teamCount = 0;
+    }
 }

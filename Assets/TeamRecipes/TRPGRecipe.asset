@@ -17,3 +17,5 @@ MonoBehaviour:
   reqProgrammer: 1
   reqArt: 0
   cpsReward: 1
+  TeamCardImage: {fileID: 0}
+  teamCount: 0

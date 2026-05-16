@@ -13,6 +13,11 @@ public class TeamCardUI : MonoBehaviour
     public Button minusButton;
     // public Button maxPlusButton;
     // public Button maxMinusButton;
+    public TextMeshProUGUI reqPlannerCntText;
+    public TextMeshProUGUI reqProgrammerCntText;
+    public TextMeshProUGUI reqArtCntText;
+    public TextMeshProUGUI teamCntText;
+    public TextMeshProUGUI teamCPSText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +26,8 @@ public class TeamCardUI : MonoBehaviour
         {
             genreNameText.text = recipe.genreName;
         }
+
+        updateTexts();
 
         if(plusButton != null) plusButton.onClick.AddListener(OnPlusClicked);
         if(minusButton != null) minusButton.onClick.AddListener(OnMinusClicked);
@@ -34,6 +41,7 @@ public class TeamCardUI : MonoBehaviour
         if(isSuccess)
         {
             // when team form successed
+            updateTexts();
         }
         else
         {
@@ -44,5 +52,14 @@ public class TeamCardUI : MonoBehaviour
     void OnMinusClicked()
     {
         
+    }
+
+    void updateTexts()
+    {
+        reqPlannerCntText.text = recipe.reqPlanner.ToString();
+        reqProgrammerCntText.text = recipe.reqProgrammer.ToString();
+        reqArtCntText.text = recipe.reqArt.ToString();
+        teamCntText.text = recipe.teamCount.ToString();
+        teamCPSText.text = $"CPS: {recipe.cpsReward}";
     }
 }
