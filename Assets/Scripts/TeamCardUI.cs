@@ -19,7 +19,6 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI teamCntText;
     public TextMeshProUGUI teamCPSText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (recipe != null && genreNameText != null)
@@ -51,7 +50,18 @@ public class TeamCardUI : MonoBehaviour
 
     void OnMinusClicked()
     {
-        
+        if (recipe == null) return;
+        bool isSuccess = TeamManager.Instance.TryDisbandTeam(recipe);
+
+        if(isSuccess)
+        {
+            // when team dissolve successed
+            updateTexts();
+        }
+        else
+        {
+            // when team dissolve failed
+        }
     }
 
     void updateTexts()

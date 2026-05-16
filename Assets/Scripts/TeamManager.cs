@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TeamManager : MonoBehaviour
 {
@@ -20,6 +22,14 @@ public class TeamManager : MonoBehaviour
     [Header("total CPS")]
     public float totalCPS;
 
+    [Header("Member Count UI")]
+    public TextMeshProUGUI plannerCountText;
+    public TextMeshProUGUI programmerCountText;
+    public TextMeshProUGUI artCountText;
+    public TextMeshProUGUI totalCPSText;
+
+    public Button addCrewButton;
+
     private Dictionary<string, int> formedTeams = new Dictionary<string, int>();
 
     void Awake()
@@ -27,56 +37,86 @@ public class TeamManager : MonoBehaviour
         if(Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-    
-    public void CheckAvailableTeams()
-    {
-        Debug.Log($"기획자 : {remainingPlanner} / 프로그래머 : {remainingProgrammer} / 아트 : {remainingArt}");
-        foreach(TeamRecipe recipe in teamRecipes)
-        {
-            if(allPlanner >= recipe.reqPlanner / 2f && allProgrammer >= recipe.reqProgrammer / 2f && allArt >= recipe.reqArt / 2f) {
-                Debug.Log($"{recipe.genreName} 팀 결성 가능! ({recipe.reqPlanner}, {recipe.reqProgrammer}, {recipe.reqArt} 필요 / 예상 수익: {recipe.cpsReward} CPS)");
-            }
-            else
-            {
-                Debug.Log($"{recipe.genreName} 팀 결성 불가 (부원 부족)");
-            }
-        }
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Initialize members
         remainingPlanner = allPlanner = 0;
         remainingProgrammer = allProgrammer = 0;
         remainingArt = allArt = 0;
-    }
+        UpdateMemberCountUI();
 
-    // Update is called once per frame
-    void Update()
-    {
-    
+        if(addCrewButton != null) addCrewButton.onClick.AddListener(OnAddCrewClicked);
     }
 
     public bool TryFormTeam(TeamRecipe recipe)
     {
-        if(allPlanner >= recipe.reqPlanner / 2f 
-            && allProgrammer >= recipe.reqProgrammer / 2f && allArt >= recipe.reqArt / 2f)
+        if(remainingPlanner >= recipe.reqPlanner && remainingProgrammer >= recipe.reqProgrammer && remainingArt >= recipe.reqArt)
         {
-            allPlanner -= recipe.reqPlanner;
-            allProgrammer -= recipe.reqProgrammer;
-            allArt -= recipe.reqArt;
+            remainingPlanner -= recipe.reqPlanner;
+            remainingProgrammer -= recipe.reqProgrammer;
+            remainingArt -= recipe.reqArt;
 
             recipe.teamCount++;
 
             totalCPS += recipe.cpsReward;
 
-            Debug.Log($"{recipe.genreName} 팀 결성 성공! 현재 총 CPS: {totalCPS}");
+            UpdateMemberCountUI();
             return true;
         }
 
-        Debug.LogWarning($"{recipe.genreName} 팀 결성 실패: 부원이 부족합니다.");
         return false;
     }
-    
+
+    public bool TryDisbandTeam(TeamRecipe recipe)
+    {
+        if(recipe.teamCount > 0)
+        {
+            remainingPlanner += recipe.reqPlanner;
+            remainingProgrammer += recipe.reqProgrammer;
+            remainingArt += recipe.reqArt;
+
+            recipe.teamCount--;
+
+            totalCPS -= recipe.cpsReward;
+
+            UpdateMemberCountUI();
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool UpdateMemberCountUI()
+    {
+        if(plannerCountText != null) plannerCountText.text = remainingPlanner.ToString();
+        if(programmerCountText != null) programmerCountText.text = remainingProgrammer.ToString();
+        if(artCountText != null) artCountText.text = remainingArt.ToString();
+        if(totalCPSText != null) totalCPSText.text = totalCPS.ToString();
+        return true;
+    }
+
+    void OnAddCrewClicked()
+    {
+        int crewType = Random.Range(0, 3);
+
+        switch (crewType)
+        {
+            case 0: 
+                allPlanner++;
+                remainingPlanner++;
+                break;
+            case 1:
+                allProgrammer++;
+                remainingProgrammer++;
+                break;
+            case 2:
+                allArt++;
+                remainingArt++;
+                break;
+        }
+
+        UpdateMemberCountUI();
+    }
 }
+
