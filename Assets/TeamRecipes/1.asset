@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
-  genreName: "\uC591\uC0B0\uD615 \uAC8C\uC784"
+  genreName: "\uACE0\uC591\uC774 \uD53C\uD558\uAE30"
   reqPlanner: 0
   reqProgrammer: 1
   reqArt: 0

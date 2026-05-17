@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
-  genreName: TRPG
+  genreName: "\uC2A4\uD154\uB77C \uBCF4\uC6B0: \uC81C\uB85C"
   reqPlanner: 30
   reqProgrammer: 45
   reqArt: 45
