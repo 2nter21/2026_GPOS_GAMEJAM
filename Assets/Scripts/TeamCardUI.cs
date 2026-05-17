@@ -146,7 +146,7 @@ public class TeamCardUI : MonoBehaviour
     {
         if(earningPopupText != null)
         {
-            earningPopupText.text = $"+{recipe.cpsReward * recipe.teamCount}$";
+            earningPopupText.text = $"+{recipe.cpsReward * recipe.teamCount * initialClickMoney}$";
             earningPopupText.gameObject.SetActive(true);
             Invoke("HideEarningPopup", 0.5f); // Hide after 0.5 second
         }
