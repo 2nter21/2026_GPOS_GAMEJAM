@@ -180,8 +180,12 @@ public class TeamManager : MonoBehaviour
         int currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
         recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
-        if(!GameManager.Instance.SpendMoney(currentMemberPrice)) return;
-        
+        if (!GameManager.Instance.SpendMoney(currentMemberPrice))
+        {
+            OnMoneyAlert();
+            return;
+        }
+
         int crewType = Random.Range(0, 3);
 
         switch (crewType)
@@ -228,18 +232,18 @@ public class TeamManager : MonoBehaviour
 
         RectTransform rect = obj.GetComponent<RectTransform>();
 
-        Vector2 localPos;
-
         RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
+        Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvasRect,
             Input.mousePosition,
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-            out localPos
+            null, // Screen Space - Overlay의 경우 null 
+            out localPoint
         );
 
-        rect.anchoredPosition = localPos;
+        // 2. UI 요소의 위치를 변환된 로컬 좌표로 변경
+        rect.localPosition = localPoint;
     }
 }
 
