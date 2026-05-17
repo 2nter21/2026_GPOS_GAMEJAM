@@ -30,7 +30,8 @@ public class TeamManager : MonoBehaviour
 
     public Button addCrewButton;
 
-    private Dictionary<string, int> formedTeams = new Dictionary<string, int>();
+    private int currentMemberPrice;
+    private int memberPriceIncrement = 2;
 
     void Awake()
     {
@@ -44,6 +45,7 @@ public class TeamManager : MonoBehaviour
         remainingPlanner = allPlanner = 0;
         remainingProgrammer = allProgrammer = 0;
         remainingArt = allArt = 0;
+        currentMemberPrice = 10;
         UpdateMemberCountUI();
 
         if(addCrewButton != null) addCrewButton.onClick.AddListener(OnAddCrewClicked);
@@ -177,6 +179,8 @@ public class TeamManager : MonoBehaviour
                 remainingArt++;
                 break;
         }
+
+        currentMemberPrice *= memberPriceIncrement;
 
         CheckTeamsToUnlock();
 
