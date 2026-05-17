@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (2)
@@ -591,6 +595,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (5)
@@ -716,6 +724,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (6)
@@ -1827,6 +1839,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (7)
@@ -3030,6 +3046,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (1)
@@ -3447,6 +3467,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (8)
@@ -3572,6 +3596,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (4)
@@ -4182,6 +4210,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI (3)
@@ -4453,6 +4485,10 @@ PrefabInstance:
       propertyPath: removeTeamSound
       value: 
       objectReference: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
+    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+      propertyPath: disbandAllTeamsButton
+      value: 
+      objectReference: {fileID: 946677018}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI
