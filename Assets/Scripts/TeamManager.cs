@@ -1,14 +1,16 @@
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class TeamManager : MonoBehaviour
 {
     public static TeamManager Instance;
 
     public List<TeamCardUI> teamRecipeUIs;
+
 
     [Header("Current Members")]
     public int allPlanner;
@@ -38,6 +40,10 @@ public class TeamManager : MonoBehaviour
     [Header("Text Bubble")]
     public TextMeshProUGUI clickUpgradeText;
     public TextMeshProUGUI recuitingMemberText;
+
+    [Header("Alert")]
+    public GameObject MoneyAlert;
+    public Canvas canvas;
 
     private int moneyPerClick = 100;
     private int clickUpgradePrice = 5000;
@@ -172,9 +178,13 @@ public class TeamManager : MonoBehaviour
 
     void OnAddCrewClicked()
     {
-        if(!GameManager.Instance.SpendMoney(currentMemberPrice)) return;
-        
-        int crewType = Random.Range(0, 3);
+        if (!GameManager.Instance.SpendMoney(currentMemberPrice))
+        {
+            OnMoneyAlert();
+            return;
+        }
+
+            int crewType = Random.Range(0, 3);
 
         switch (crewType)
         {
@@ -202,13 +212,37 @@ public class TeamManager : MonoBehaviour
 
     void OnUpgradeClick()
     {
-        if (!GameManager.Instance.SpendMoney(clickUpgradePrice)) return;
+        if (!GameManager.Instance.SpendMoney(clickUpgradePrice))
+        {
+            OnMoneyAlert();
+            return;
+        }
 
         moneyPerClick *= clickUpgradeIncrement;
         clickUpgradePrice *= clickUpgradeIncrement;
         clickUpgradeText.text = $"Upgrade the money earned per click" +
             $"\n{moneyPerClick} --> {moneyPerClick*clickUpgradeIncrement}" +
             $"\nCost : {clickUpgradePrice}";
+    }
+
+    void OnMoneyAlert()
+    {
+        GameObject obj = Instantiate(MoneyAlert, canvas.transform);
+
+        RectTransform rect = obj.GetComponent<RectTransform>();
+
+        Vector2 localPos;
+
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            Input.mousePosition,
+            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
+            out localPos
+        );
+
+        rect.anchoredPosition = localPos;
     }
 }
 
