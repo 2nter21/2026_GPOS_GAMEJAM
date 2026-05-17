@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
-  m_Name: TRPGRecipe
+  m_Name: 2
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
-  genreName: TRPG
-  reqPlanner: 2
+  genreName: 2D Game
+  reqPlanner: 1
   reqProgrammer: 1
-  reqArt: 0
-  cpsReward: 1
-  TeamCardImage: {fileID: 0}
+  reqArt: 1
+  cpsReward: 0.4
   teamCount: 0
+  isUnlocked: 0
