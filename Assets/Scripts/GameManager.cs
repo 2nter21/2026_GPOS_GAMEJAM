@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public StatusCounter MoneyText;
 
     public int money = 0;
 
@@ -20,6 +23,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MoneyText.setCount(money);
     }
 }

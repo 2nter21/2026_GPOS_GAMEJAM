@@ -797,6 +797,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205626197}
   m_CullTransparentMesh: 1
+--- !u!1 &263526664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263526667}
+  - component: {fileID: 263526666}
+  - component: {fileID: 263526665}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263526665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263526664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c374f5c9d7a989c4cb988fd6ed74fa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeamManager
+  teamRecipeUIs: []
+  allPlanner: 0
+  allProgrammer: 0
+  allArt: 0
+  remainingPlanner: 0
+  remainingProgrammer: 0
+  remainingArt: 0
+  totalCPS: 0
+  plannerCountText: {fileID: 818922520}
+  programmerCountText: {fileID: 1072972840}
+  artCountText: {fileID: 696734477}
+  totalCPSText: {fileID: 0}
+  addCrewButton: {fileID: 967407370}
+--- !u!114 &263526666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263526664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0cadade05b9e842bcffc0f543fed86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  MoneyText: {fileID: 2034839570}
+  money: 0
+--- !u!4 &263526667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263526664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 518.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630634708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4736,3 +4808,4 @@ SceneRoots:
   - {fileID: 1747625356}
   - {fileID: 1656210846}
   - {fileID: 1037584979}
+  - {fileID: 263526667}

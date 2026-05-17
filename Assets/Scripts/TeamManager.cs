@@ -23,9 +23,9 @@ public class TeamManager : MonoBehaviour
     public float totalCPS;
 
     [Header("Member Count UI")]
-    public TextMeshProUGUI plannerCountText;
-    public TextMeshProUGUI programmerCountText;
-    public TextMeshProUGUI artCountText;
+    public StatusCounter plannerCountText;
+    public StatusCounter programmerCountText;
+    public StatusCounter artCountText;
     public TextMeshProUGUI totalCPSText;
 
     public Button addCrewButton;
@@ -153,9 +153,9 @@ public class TeamManager : MonoBehaviour
 
     public void UpdateMemberCountUI()
     {
-        if(plannerCountText != null) plannerCountText.text = remainingPlanner.ToString();
-        if(programmerCountText != null) programmerCountText.text = remainingProgrammer.ToString();
-        if(artCountText != null) artCountText.text = remainingArt.ToString();
+        if(plannerCountText != null) plannerCountText.setCount(remainingPlanner);
+        if(programmerCountText != null) programmerCountText.setCount(remainingProgrammer);
+        if(artCountText != null) artCountText.setCount(remainingArt);
         if(totalCPSText != null) totalCPSText.text = totalCPS.ToString();
     }
 
