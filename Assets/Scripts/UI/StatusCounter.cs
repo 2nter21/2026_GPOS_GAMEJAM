@@ -11,11 +11,11 @@ public class StatusCounter : MonoBehaviour
     {
 
 
-        if (n > 1000000)
+        if (n >= 1000000)
         {
             GetComponent<TextMeshProUGUI>().text = ((double) n / 1000000).ToString("F2") + "M";
         }
-        else if (n > 1000)
+        else if (n >= 1000)
         {
             GetComponent<TextMeshProUGUI>().text = ((double)n / 1000).ToString("F2") + "K";
         }
