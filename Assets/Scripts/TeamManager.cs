@@ -1,14 +1,16 @@
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class TeamManager : MonoBehaviour
 {
     public static TeamManager Instance;
 
     public List<TeamCardUI> teamRecipeUIs;
+
 
     [Header("Current Members")]
     public int allPlanner;
@@ -32,12 +34,15 @@ public class TeamManager : MonoBehaviour
     public Button upgradeClick;
     public Button addCrewButton;
 
-    private int currentMemberPrice;
-    private int memberPriceIncrement = 2;
+    private int addCrewClickedCount = 0;
 
     [Header("Text Bubble")]
     public TextMeshProUGUI clickUpgradeText;
     public TextMeshProUGUI recuitingMemberText;
+
+    [Header("Alert")]
+    public GameObject MoneyAlert;
+    public Canvas canvas;
 
     private int moneyPerClick = 100;
     private int clickUpgradePrice = 5000;
@@ -55,7 +60,7 @@ public class TeamManager : MonoBehaviour
         remainingPlanner = allPlanner = 0;
         remainingProgrammer = allProgrammer = 0;
         remainingArt = allArt = 0;
-        currentMemberPrice = 10;
+        addCrewClickedCount = 0;
         UpdateMemberCountUI();
 
         if(addCrewButton != null) addCrewButton.onClick.AddListener(OnAddCrewClicked);
@@ -172,8 +177,15 @@ public class TeamManager : MonoBehaviour
 
     void OnAddCrewClicked()
     {
-        if(!GameManager.Instance.SpendMoney(currentMemberPrice)) return;
-        
+        int currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
+        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
+
+        if (!GameManager.Instance.SpendMoney(currentMemberPrice))
+        {
+            OnMoneyAlert();
+            return;
+        }
+
         int crewType = Random.Range(0, 3);
 
         switch (crewType)
@@ -192,8 +204,7 @@ public class TeamManager : MonoBehaviour
                 break;
         }
 
-        currentMemberPrice *= memberPriceIncrement;
-        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
+        addCrewClickedCount++;
 
         CheckTeamsToUnlock();
 
@@ -202,13 +213,37 @@ public class TeamManager : MonoBehaviour
 
     void OnUpgradeClick()
     {
-        if (!GameManager.Instance.SpendMoney(clickUpgradePrice)) return;
+        if (!GameManager.Instance.SpendMoney(clickUpgradePrice))
+        {
+            OnMoneyAlert();
+            return;
+        }
 
         moneyPerClick *= clickUpgradeIncrement;
         clickUpgradePrice *= clickUpgradeIncrement;
         clickUpgradeText.text = $"Upgrade the money earned per click" +
             $"\n{moneyPerClick} --> {moneyPerClick*clickUpgradeIncrement}" +
             $"\nCost : {clickUpgradePrice}";
+    }
+
+    void OnMoneyAlert()
+    {
+        GameObject obj = Instantiate(MoneyAlert, canvas.transform);
+
+        RectTransform rect = obj.GetComponent<RectTransform>();
+
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            Input.mousePosition,
+            null, // Screen Space - Overlay의 경우 null 
+            out localPoint
+        );
+
+        // 2. UI 요소의 위치를 변환된 로컬 좌표로 변경
+        rect.localPosition = localPoint;
     }
 }
 
