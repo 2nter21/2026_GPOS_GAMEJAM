@@ -34,8 +34,7 @@ public class TeamManager : MonoBehaviour
     public Button upgradeClick;
     public Button addCrewButton;
 
-    private int currentMemberPrice;
-    private int memberPriceIncrement = 2;
+    private int addCrewClickedCount = 0;
 
     [Header("Text Bubble")]
     public TextMeshProUGUI clickUpgradeText;
@@ -61,7 +60,7 @@ public class TeamManager : MonoBehaviour
         remainingPlanner = allPlanner = 0;
         remainingProgrammer = allProgrammer = 0;
         remainingArt = allArt = 0;
-        currentMemberPrice = 10;
+        addCrewClickedCount = 0;
         UpdateMemberCountUI();
 
         if(addCrewButton != null) addCrewButton.onClick.AddListener(OnAddCrewClicked);
@@ -178,13 +177,12 @@ public class TeamManager : MonoBehaviour
 
     void OnAddCrewClicked()
     {
-        if (!GameManager.Instance.SpendMoney(currentMemberPrice))
-        {
-            OnMoneyAlert();
-            return;
-        }
+        int currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
+        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
-            int crewType = Random.Range(0, 3);
+        if(!GameManager.Instance.SpendMoney(currentMemberPrice)) return;
+        
+        int crewType = Random.Range(0, 3);
 
         switch (crewType)
         {
@@ -202,8 +200,7 @@ public class TeamManager : MonoBehaviour
                 break;
         }
 
-        currentMemberPrice *= memberPriceIncrement;
-        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
+        addCrewClickedCount++;
 
         CheckTeamsToUnlock();
 
