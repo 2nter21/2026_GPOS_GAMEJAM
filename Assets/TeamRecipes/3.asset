@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
+  Icon: {fileID: -57406804067794764, guid: 818d1d51d434671418ece9b14be4b9d8, type: 3}
   genreName: 'RNG Knights: Deck of Fate'
   reqPlanner: 1
   reqProgrammer: 2

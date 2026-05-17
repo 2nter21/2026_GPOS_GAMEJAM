@@ -9,6 +9,7 @@ public class TeamCardUI : MonoBehaviour
 
     [Header("UI Components")]
     public TextMeshProUGUI genreNameText;
+    public Image IconImage;
     public Button plusButton;
     public Button minusButton;
     public Button maxPlusButton;
@@ -31,6 +32,7 @@ public class TeamCardUI : MonoBehaviour
         if (recipe != null && genreNameText != null)
         {
             genreNameText.text = recipe.genreName;
+            IconImage.sprite = recipe.Icon;
         }
 
         updateTexts();

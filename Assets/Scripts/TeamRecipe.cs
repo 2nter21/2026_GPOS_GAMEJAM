@@ -4,6 +4,7 @@ using UnityEngine;
 public class TeamRecipe : ScriptableObject
 {
     [Header("Team Info")]
+    public Sprite Icon;
     public string genreName;
     
     [Header("Required Team")]

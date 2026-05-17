@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
+  Icon: {fileID: 5921683665393089830, guid: 818d1d51d434671418ece9b14be4b9d8, type: 3}
   genreName: 'Project Aether: Frontline'
   reqPlanner: 5
   reqProgrammer: 10
