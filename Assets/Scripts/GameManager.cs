@@ -25,4 +25,19 @@ public class GameManager : MonoBehaviour
     {
         MoneyText.setCount(money);
     }
+
+    public bool SpendMoney(int amount)
+    {
+        if(money >= amount)
+        {
+            money -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void EarnMoney(int amount)
+    {
+        money += amount;
+    }
 }

@@ -24,6 +24,8 @@ public class TeamCardUI : MonoBehaviour
     private float earningPopupTimer = 0f;
     private const float earningPopupInterval = 1f;
 
+    private int initialClickMoney = 100;
+
     void Start()
     {
         if (recipe != null && genreNameText != null)
@@ -135,7 +137,7 @@ public class TeamCardUI : MonoBehaviour
     {
         if (recipe.teamCount > 0)
         {
-            // Implement money earning Logic
+            GameManager.Instance.EarnMoney((int)(recipe.cpsReward * recipe.teamCount * initialClickMoney));
             ShowEarningPopup();
         }
     }
