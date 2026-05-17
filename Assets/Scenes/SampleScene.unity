@@ -815,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307054795822118575, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 90
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 307054795822118575, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -836,6 +836,10 @@ PrefabInstance:
     - target: {fileID: 2460781355901308258, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_Name
       value: Text Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
+      propertyPath: m_text
+      value: Remove all teams
       objectReference: {fileID: 0}
     - target: {fileID: 7710395213441817198, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_AnchorMax.y
