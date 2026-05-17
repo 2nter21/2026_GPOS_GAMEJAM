@@ -248,5 +248,10 @@ public class TeamManager : MonoBehaviour
         // 2. UI 요소의 위치를 변환된 로컬 좌표로 변경
         rect.localPosition = localPoint;
     }
+
+    public void onClick()
+    {
+        GameManager.Instance.EarnMoney(moneyPerClick);
+    }
 }
 
