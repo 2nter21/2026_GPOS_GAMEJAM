@@ -45,13 +45,24 @@ public class TeamManager : MonoBehaviour
     public GameObject MoneyAlert;
     public Canvas canvas;
 
-    private int moneyPerClick = 100;
+    [Header("Sound")]
+    public AudioClip clickSound;
+    public AudioClip autoSound;
+    public AudioClip clickUpgradeSound;
+    public AudioClip recruitingMemberSound;
+    public AudioClip addTeamSound;
+    public AudioClip removeTeamSound;
+
+    public int moneyPerClick = 100;
     private int clickUpgradePrice = 10000;
 
     private int currentMemberPrice = 1000;
 
+    private AudioSource audioSource;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         if(Instance == null) Instance = this;
         else Destroy(gameObject);
     }
@@ -202,9 +213,12 @@ public class TeamManager : MonoBehaviour
                 remainingArt++;
                 break;
         }
+        audioSource.PlayOneShot(recruitingMemberSound);
 
         addCrewClickedCount++;
         currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
+        if (currentMemberPrice > 10000) currentMemberPrice = 10000;
+
         recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
         CheckTeamsToUnlock();
@@ -219,7 +233,7 @@ public class TeamManager : MonoBehaviour
             OnMoneyAlert();
             return;
         }
-
+        audioSource.PlayOneShot(clickUpgradeSound);
         moneyPerClick += 10;
         addClickUpgradeCount++;
 
@@ -247,6 +261,12 @@ public class TeamManager : MonoBehaviour
 
         // 2. UI 요소의 위치를 변환된 로컬 좌표로 변경
         rect.localPosition = localPoint;
+    }
+
+    public void onClick()
+    {
+        GameManager.Instance.EarnMoney(moneyPerClick);
+        audioSource.PlayOneShot(clickSound);
     }
 }
 

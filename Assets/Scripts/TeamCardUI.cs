@@ -22,6 +22,12 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI earningPopupText;
     public Image lockedOverlayImage;
 
+    [Header("Audio")]
+    public AudioClip autoSound;
+    public AudioClip addTeamSound;
+    public AudioClip removeTeamSound;
+    private AudioSource audioSource;
+
     private float earningPopupTimer = 0f;
     private const float earningPopupInterval = 1f;
 
@@ -29,6 +35,8 @@ public class TeamCardUI : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (recipe != null && genreNameText != null)
         {
             genreNameText.text = recipe.genreName;
@@ -70,6 +78,7 @@ public class TeamCardUI : MonoBehaviour
         if(isSuccess)
         {
             // when team form successed
+            audioSource.PlayOneShot(addTeamSound);
             updateTexts();
         }
         else
@@ -86,6 +95,7 @@ public class TeamCardUI : MonoBehaviour
         if(isSuccess)
         {
             // when team dissolve successed
+            audioSource.PlayOneShot(removeTeamSound);
             updateTexts();
         }
         else
@@ -102,6 +112,7 @@ public class TeamCardUI : MonoBehaviour
         if(isSuccess)
         {
             // when team form successed
+            audioSource.PlayOneShot(addTeamSound);
             updateTexts();
         }
         else
@@ -118,6 +129,7 @@ public class TeamCardUI : MonoBehaviour
         if(isSuccess)
         {
             // when team dissolve successed
+            audioSource.PlayOneShot(removeTeamSound);
             updateTexts();
         }
         else
@@ -139,8 +151,9 @@ public class TeamCardUI : MonoBehaviour
     {
         if (recipe.teamCount > 0)
         {
-            GameManager.Instance.EarnMoney((int)(recipe.cpsReward * recipe.teamCount * initialClickMoney));
+            GameManager.Instance.EarnMoney((int)(recipe.cpsReward * recipe.teamCount * TeamManager.Instance.moneyPerClick));
             ShowEarningPopup();
+            audioSource.PlayOneShot(autoSound);
         }
     }
 
@@ -148,7 +161,7 @@ public class TeamCardUI : MonoBehaviour
     {
         if(earningPopupText != null)
         {
-            earningPopupText.text = $"+{recipe.cpsReward * recipe.teamCount * initialClickMoney}$";
+            earningPopupText.text = $"+{recipe.cpsReward * recipe.teamCount * TeamManager.Instance.moneyPerClick}$";
             earningPopupText.gameObject.SetActive(true);
             Invoke("HideEarningPopup", 0.5f); // Hide after 0.5 second
         }
