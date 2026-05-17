@@ -21,6 +21,7 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI teamCPSText;
     public TextMeshProUGUI earningPopupText;
     public Image lockedOverlayImage;
+    public Button disbandAllTeamsButton;
 
     [Header("Audio")]
     public AudioClip autoSound;
@@ -49,6 +50,7 @@ public class TeamCardUI : MonoBehaviour
         if(minusButton != null) minusButton.onClick.AddListener(OnMinusClicked);
         if(maxPlusButton != null) maxPlusButton.onClick.AddListener(OnMaxPlusClicked);
         if(maxMinusButton != null) maxMinusButton.onClick.AddListener(OnMaxMinusClicked);
+        if(disbandAllTeamsButton != null) disbandAllTeamsButton.onClick.AddListener(OnMaxMinusClicked);
     }
 
     void Update()
@@ -179,6 +181,7 @@ public class TeamCardUI : MonoBehaviour
     {
         if(lockedOverlayImage != null)
         {
+            recipe.isUnlocked = true;
             lockedOverlayImage.gameObject.SetActive(false);
         }
     }
