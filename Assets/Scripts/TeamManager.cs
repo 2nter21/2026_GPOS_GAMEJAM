@@ -161,6 +161,8 @@ public class TeamManager : MonoBehaviour
 
     void OnAddCrewClicked()
     {
+        if(!GameManager.Instance.SpendMoney(currentMemberPrice)) return;
+        
         int crewType = Random.Range(0, 3);
 
         switch (crewType)
