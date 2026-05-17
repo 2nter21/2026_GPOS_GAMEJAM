@@ -157,6 +157,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &226544678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
+  m_PrefabInstance: {fileID: 1152835176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &263526664
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c374f5c9d7a989c4cb988fd6ed74fa83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeamManager
-  teamRecipeUIs: []
+  teamRecipeUIs:
+  - {fileID: 4722481391191224845}
   allPlanner: 0
   allProgrammer: 0
   allArt: 0
@@ -199,7 +211,10 @@ MonoBehaviour:
   programmerCountText: {fileID: 1072972840}
   artCountText: {fileID: 696734477}
   totalCPSText: {fileID: 0}
+  upgradeClick: {fileID: 775159819}
   addCrewButton: {fileID: 967407370}
+  clickUpgradeText: {fileID: 1068890936}
+  recuitingMemberText: {fileID: 226544678}
 --- !u!114 &263526666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,6 +1457,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1068890936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
+  m_PrefabInstance: {fileID: 1616165775700044067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1072972836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460781355901308258, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_Name
-      value: Text Bubble
+      value: Recruiting Member
       objectReference: {fileID: 0}
     - target: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_text
@@ -2213,17 +2239,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695649373}
   m_CullTransparentMesh: 1
---- !u!114 &1724535721 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8917670554206719840, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-  m_PrefabInstance: {fileID: 5641388050273752496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1747625353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,7 +2892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460781355901308258, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_Name
-      value: Text Bubble
+      value: Click Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_text
@@ -2922,6 +2937,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 768220518476521037, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
   m_PrefabInstance: {fileID: 5641388050273752496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4722481391191224845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
+  m_PrefabInstance: {fileID: 5641388050273752496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da12a781a309cde41b3ddec32912e190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeamCardUI
 --- !u!1001 &5641388050273752496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3011,13 +3037,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-      propertyPath: IconImage
+      propertyPath: recipe
       value: 
-      objectReference: {fileID: 1724535721}
-    - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-      propertyPath: lockedOverlayImage
-      value: 
-      objectReference: {fileID: 7053218125389280354}
+      objectReference: {fileID: 11400000, guid: 51c7fe8ba759f8a40b28eeb52daaae95, type: 2}
     - target: {fileID: 6471739739397981224, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: m_Name
       value: Team Card UI
@@ -3031,17 +3053,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
---- !u!114 &7053218125389280354 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3197036703826710924, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-  m_PrefabInstance: {fileID: 5641388050273752496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

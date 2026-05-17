@@ -28,10 +28,20 @@ public class TeamManager : MonoBehaviour
     public StatusCounter artCountText;
     public TextMeshProUGUI totalCPSText;
 
+    [Header("Upgrade Buttons")]
+    public Button upgradeClick;
     public Button addCrewButton;
 
     private int currentMemberPrice;
     private int memberPriceIncrement = 2;
+
+    [Header("Text Bubble")]
+    public TextMeshProUGUI clickUpgradeText;
+    public TextMeshProUGUI recuitingMemberText;
+
+    private int moneyPerClick = 100;
+    private int clickUpgradePrice = 5000;
+    private int clickUpgradeIncrement = 2;
 
     void Awake()
     {
@@ -49,6 +59,7 @@ public class TeamManager : MonoBehaviour
         UpdateMemberCountUI();
 
         if(addCrewButton != null) addCrewButton.onClick.AddListener(OnAddCrewClicked);
+        if (upgradeClick != null) upgradeClick.onClick.AddListener(OnUpgradeClick);
     }
 
     public bool TryFormTeam(TeamRecipe recipe)
@@ -182,10 +193,22 @@ public class TeamManager : MonoBehaviour
         }
 
         currentMemberPrice *= memberPriceIncrement;
+        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
         CheckTeamsToUnlock();
 
         UpdateMemberCountUI();
+    }
+
+    void OnUpgradeClick()
+    {
+        if (!GameManager.Instance.SpendMoney(clickUpgradePrice)) return;
+
+        moneyPerClick *= clickUpgradeIncrement;
+        clickUpgradePrice *= clickUpgradeIncrement;
+        clickUpgradeText.text = $"Upgrade the money earned per click" +
+            $"\n{moneyPerClick} --> {moneyPerClick*clickUpgradeIncrement}" +
+            $"\nCost : {clickUpgradePrice}";
     }
 }
 
