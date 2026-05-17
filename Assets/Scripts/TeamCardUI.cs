@@ -11,8 +11,8 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI genreNameText;
     public Button plusButton;
     public Button minusButton;
-    // public Button maxPlusButton;
-    // public Button maxMinusButton;
+    public Button maxPlusButton;
+    public Button maxMinusButton;
     public TextMeshProUGUI reqPlannerCntText;
     public TextMeshProUGUI reqProgrammerCntText;
     public TextMeshProUGUI reqArtCntText;
@@ -30,6 +30,8 @@ public class TeamCardUI : MonoBehaviour
 
         if(plusButton != null) plusButton.onClick.AddListener(OnPlusClicked);
         if(minusButton != null) minusButton.onClick.AddListener(OnMinusClicked);
+        if(maxPlusButton != null) maxPlusButton.onClick.AddListener(OnMaxPlusClicked);
+        if(maxMinusButton != null) maxMinusButton.onClick.AddListener(OnMaxMinusClicked);
     }
 
     void OnPlusClicked()
@@ -52,6 +54,38 @@ public class TeamCardUI : MonoBehaviour
     {
         if (recipe == null) return;
         bool isSuccess = TeamManager.Instance.TryDisbandTeam(recipe);
+
+        if(isSuccess)
+        {
+            // when team dissolve successed
+            updateTexts();
+        }
+        else
+        {
+            // when team dissolve failed
+        }
+    }
+
+    void OnMaxPlusClicked()
+    {
+        if (recipe == null) return;
+        bool isSuccess = TeamManager.Instance.TryFormMaxTeam(recipe);
+
+        if(isSuccess)
+        {
+            // when team form successed
+            updateTexts();
+        }
+        else
+        {
+            // when team form failed
+        }
+    }
+
+    void OnMaxMinusClicked()
+    {
+        if (recipe == null) return;
+        bool isSuccess = TeamManager.Instance.TryDisbandMaxTeam(recipe);
 
         if(isSuccess)
         {

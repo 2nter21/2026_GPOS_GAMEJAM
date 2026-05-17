@@ -87,13 +87,60 @@ public class TeamManager : MonoBehaviour
         return false;
     }
 
-    public bool UpdateMemberCountUI()
+    public bool TryFormMaxTeam(TeamRecipe recipe)
+    {
+        List<int> maxTeamsValues = new List<int>();
+        
+        if(recipe.reqPlanner > 0) maxTeamsValues.Add(remainingPlanner / recipe.reqPlanner);
+        if(recipe.reqProgrammer > 0) maxTeamsValues.Add(remainingProgrammer / recipe.reqProgrammer);
+        if(recipe.reqArt > 0) maxTeamsValues.Add(remainingArt / recipe.reqArt);
+
+        int maxTeamsPossible = (maxTeamsValues.Count > 0) ? Mathf.Min(maxTeamsValues.ToArray()) : 0;
+
+        if(maxTeamsPossible > 0)
+        {
+            remainingPlanner -= maxTeamsPossible * recipe.reqPlanner;
+            remainingProgrammer -= maxTeamsPossible * recipe.reqProgrammer;
+            remainingArt -= maxTeamsPossible * recipe.reqArt;
+
+            recipe.teamCount += maxTeamsPossible;
+
+            totalCPS += maxTeamsPossible * recipe.cpsReward;
+
+            UpdateMemberCountUI();
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool TryDisbandMaxTeam(TeamRecipe recipe)
+    {
+        if(recipe.teamCount > 0)
+        {
+            int teamsToDisband = recipe.teamCount;
+
+            remainingPlanner += teamsToDisband * recipe.reqPlanner;
+            remainingProgrammer += teamsToDisband * recipe.reqProgrammer;
+            remainingArt += teamsToDisband * recipe.reqArt;
+
+            recipe.teamCount = 0;
+
+            totalCPS -= teamsToDisband * recipe.cpsReward;
+
+            UpdateMemberCountUI();
+            return true;
+        }
+
+        return false;
+    }
+
+    public void UpdateMemberCountUI()
     {
         if(plannerCountText != null) plannerCountText.text = remainingPlanner.ToString();
         if(programmerCountText != null) programmerCountText.text = remainingProgrammer.ToString();
         if(artCountText != null) artCountText.text = remainingArt.ToString();
         if(totalCPSText != null) totalCPSText.text = totalCPS.ToString();
-        return true;
     }
 
     void OnAddCrewClicked()
