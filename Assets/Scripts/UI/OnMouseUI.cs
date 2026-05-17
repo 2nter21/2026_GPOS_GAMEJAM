@@ -18,7 +18,7 @@ public class OnMouseUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        targetScale = originScale * sizeupMag;
+        targetScale = originScale;
 
         if (UI != null)
         {
