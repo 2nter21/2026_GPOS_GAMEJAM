@@ -35,6 +35,7 @@ public class TeamManager : MonoBehaviour
     public Button addCrewButton;
 
     private int addCrewClickedCount = 0;
+    private int addClickUpgradeCount = 0;
 
     [Header("Text Bubble")]
     public TextMeshProUGUI clickUpgradeText;
@@ -45,8 +46,9 @@ public class TeamManager : MonoBehaviour
     public Canvas canvas;
 
     private int moneyPerClick = 100;
-    private int clickUpgradePrice = 5000;
-    private int clickUpgradeIncrement = 2;
+    private int clickUpgradePrice = 10000;
+
+    private int currentMemberPrice = 1000;
 
     void Awake()
     {
@@ -177,9 +179,6 @@ public class TeamManager : MonoBehaviour
 
     void OnAddCrewClicked()
     {
-        int currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
-        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
-
         if (!GameManager.Instance.SpendMoney(currentMemberPrice))
         {
             OnMoneyAlert();
@@ -205,6 +204,8 @@ public class TeamManager : MonoBehaviour
         }
 
         addCrewClickedCount++;
+        currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
+        recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
         CheckTeamsToUnlock();
 
@@ -219,10 +220,12 @@ public class TeamManager : MonoBehaviour
             return;
         }
 
-        moneyPerClick *= clickUpgradeIncrement;
-        clickUpgradePrice *= clickUpgradeIncrement;
+        moneyPerClick += 10;
+        addClickUpgradeCount++;
+
+        clickUpgradePrice = 100 * (10 + addClickUpgradeCount) * (10 + addClickUpgradeCount);
         clickUpgradeText.text = $"Upgrade the money earned per click" +
-            $"\n{moneyPerClick} --> {moneyPerClick*clickUpgradeIncrement}" +
+            $"\n{moneyPerClick} --> {moneyPerClick + 10}" +
             $"\nCost : {clickUpgradePrice}";
     }
 

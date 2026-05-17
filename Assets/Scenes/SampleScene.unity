@@ -344,6 +344,8 @@ MonoBehaviour:
   addCrewButton: {fileID: 967407370}
   clickUpgradeText: {fileID: 1068890936}
   recuitingMemberText: {fileID: 226544678}
+  MoneyAlert: {fileID: 8973269392488366967, guid: 3c76282476327d74e941879c3a0d454c, type: 3}
+  canvas: {fileID: 1656210845}
 --- !u!114 &263526666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,9 +2089,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6091945516021977598, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_text
-      value: 'Recruit member
+      value: 'Recruiting member
 
-        Cost : 1K'
+        Cost : 1000'
       objectReference: {fileID: 0}
     - target: {fileID: 7710395213441817198, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3885,7 +3887,7 @@ PrefabInstance:
         100 --> 110
 
         Cost
-        : 10K'
+        : 10000'
       objectReference: {fileID: 0}
     - target: {fileID: 7710395213441817198, guid: dbdbebd61be56b64cb4736779d0ef8a8, type: 3}
       propertyPath: m_AnchorMax.y
