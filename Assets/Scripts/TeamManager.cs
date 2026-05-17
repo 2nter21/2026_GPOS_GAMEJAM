@@ -53,6 +53,11 @@ public class TeamManager : MonoBehaviour
     public AudioClip addTeamSound;
     public AudioClip removeTeamSound;
 
+    [Header("Crew")]
+    public List<Sprite> crewImage;
+    public GameObject parent;
+    public GameObject CrewPrefab;
+
     public int moneyPerClick = 100;
     private int clickUpgradePrice = 10000;
 
@@ -215,15 +220,30 @@ public class TeamManager : MonoBehaviour
         }
         audioSource.PlayOneShot(recruitingMemberSound);
 
+        GameObject newCrew = Instantiate(CrewPrefab, parent.transform);
+
+        int crewImageType = Random.Range(0, 4);
+        newCrew.GetComponent<Image>().sprite = crewImage[crewImageType];
+
+        Vector3 vec = new Vector3(-750, 120, 0);
+        vec += (addCrewClickedCount / 15) * new Vector3(0, -120, 0) + (addCrewClickedCount % 15) * new Vector3(120, -0, 0);
+        newCrew.GetComponent<RectTransform>().localPosition = vec;
+
         addCrewClickedCount++;
         currentMemberPrice = 10 * (10 + addCrewClickedCount) * (10 + addCrewClickedCount);
         if (currentMemberPrice > 10000) currentMemberPrice = 10000;
+
+
 
         recuitingMemberText.text = $"Recruiting member\nCost : {currentMemberPrice}";
 
         CheckTeamsToUnlock();
 
         UpdateMemberCountUI();
+
+        
+
+        
     }
 
     void OnUpgradeClick()

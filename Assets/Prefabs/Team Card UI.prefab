@@ -1599,7 +1599,7 @@ MonoBehaviour:
   teamCPSText: {fileID: 6945757052911517574}
   earningPopupText: {fileID: 5464517253912412711}
   lockedOverlayImage: {fileID: 3197036703826710924}
-  autoSound: {fileID: 8300000, guid: fe74a607f2c78a043acbb25948bcd980, type: 3}
+  autoSound: {fileID: 8300000, guid: 3723503a50213db4b964488b6bda5ea6, type: 3}
   addTeamSound: {fileID: 8300000, guid: 0bfc85d35d4014d40a2832fcd9c923b2, type: 3}
   removeTeamSound: {fileID: 8300000, guid: 2e79494b524c1db48b3b0b8b364f5039, type: 3}
 --- !u!82 &6690124941688796618
