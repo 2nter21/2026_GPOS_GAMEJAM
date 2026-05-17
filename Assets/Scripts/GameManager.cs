@@ -1,0 +1,43 @@
+using TMPro;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance;
+
+    public StatusCounter MoneyText;
+
+    public int money = 0;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        MoneyText.setCount(money);
+    }
+
+    public bool SpendMoney(int amount)
+    {
+        if(money >= amount)
+        {
+            money -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void EarnMoney(int amount)
+    {
+        money += amount;
+    }
+}
