@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: badebd4d567502f428fff8bab51a71a4
+guid: d87d13f73e03d944d90395185d7f827d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,12 +127,12 @@ TextureImporter:
       name: Buttons_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 1
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: Buttons_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 17
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Buttons_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 33
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: Buttons_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 1
+        y: 17
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: Buttons_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 17
+        y: 17
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: Buttons_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 33
+        y: 17
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: Buttons_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 1
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: Buttons_7
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 17
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: Buttons_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
+        x: 33
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -333,9 +333,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
       Buttons_0: 8894201953851282084
       Buttons_1: 7664807735657788756

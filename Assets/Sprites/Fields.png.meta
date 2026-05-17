@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17b35e00a2daa2d41b9171ebfde1a7c7
+guid: f8a29b96dedd78a4e88d02c534b75fb2
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,9 +116,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0da0a74d25faa5841a0c473d94957346
+      spriteID: 45d4c66b471c0bd30800000000000000
       internalID: 4445265539235597652
       vertices: []
       indices: 
@@ -138,9 +138,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f28c216e231200c478b34746791005b9
+      spriteID: 2361a458476ef3d90800000000000000
       internalID: -7115715498095274446
       vertices: []
       indices: 
@@ -162,8 +162,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f86ed82e7ec73f4aabe3edf25aeda20
-      internalID: 1412794826
+      spriteID: 4fc2bf7734bf6b74599eb917c93222ed
+      internalID: 1231777418
       vertices: []
       indices: 
       edges: []
@@ -172,7 +172,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c89679d6210389f40a2da8918b68ceb0
+    spriteID: d6d1159dfbe516f4ca78abba98b49c8a
     internalID: 0
     vertices: []
     indices: 
@@ -186,7 +186,7 @@ TextureImporter:
     nameFileIdTable:
       Fields_0: 4445265539235597652
       Fields_1: -7115715498095274446
-      Fields_2: 1412794826
+      Fields_2: 1231777418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
