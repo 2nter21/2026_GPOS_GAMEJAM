@@ -18,6 +18,10 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI reqArtCntText;
     public TextMeshProUGUI teamCntText;
     public TextMeshProUGUI teamCPSText;
+    public TextMeshProUGUI earningPopupText;
+
+    private float earningPopupTimer = 0f;
+    private const float earningPopupInterval = 1f;
 
     void Start()
     {
@@ -32,6 +36,25 @@ public class TeamCardUI : MonoBehaviour
         if(minusButton != null) minusButton.onClick.AddListener(OnMinusClicked);
         if(maxPlusButton != null) maxPlusButton.onClick.AddListener(OnMaxPlusClicked);
         if(maxMinusButton != null) maxMinusButton.onClick.AddListener(OnMaxMinusClicked);
+    }
+
+    void Update()
+    {
+        if (recipe == null) return;
+
+        if (recipe.teamCount > 0)
+        {
+            earningPopupTimer += Time.deltaTime;
+            if (earningPopupTimer >= earningPopupInterval)
+            {
+                earningPopupTimer = 0f;
+                EarnMoney();
+            }
+        }
+        else
+        {
+            earningPopupTimer = 0f;
+        }
     }
 
     void OnPlusClicked()
@@ -103,7 +126,34 @@ public class TeamCardUI : MonoBehaviour
         reqPlannerCntText.text = recipe.reqPlanner.ToString();
         reqProgrammerCntText.text = recipe.reqProgrammer.ToString();
         reqArtCntText.text = recipe.reqArt.ToString();
-        teamCntText.text = recipe.teamCount.ToString();
+        teamCntText.text = $"x{recipe.teamCount}";
         teamCPSText.text = $"CPS: {recipe.cpsReward}";
+    }
+
+    void EarnMoney()
+    {
+        if (recipe.teamCount > 0)
+        {
+            // Implement money earning Logic
+            ShowEarningPopup();
+        }
+    }
+
+    void ShowEarningPopup()
+    {
+        if(earningPopupText != null)
+        {
+            earningPopupText.text = $"+{recipe.cpsReward * recipe.teamCount}$";
+            earningPopupText.gameObject.SetActive(true);
+            Invoke("HideEarningPopup", 0.5f); // Hide after 0.5 second
+        }
+    }
+
+    void HideEarningPopup()
+    {
+        if(earningPopupText != null)
+        {
+            earningPopupText.gameObject.SetActive(false);
+        }
     }
 }
