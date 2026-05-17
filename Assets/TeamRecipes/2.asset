@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
-  genreName: "\uB358\uC804 \uB3D9\uC544\uB9AC: \uD0D5\uD0D5 \uB9C8\uBC95\uC0AC"
+  genreName: 'Spellbound: Dungeon Run'
   reqPlanner: 1
   reqProgrammer: 1
   reqArt: 1

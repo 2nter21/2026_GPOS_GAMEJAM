@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cab46ac83ee7d24093a7dffc151bb6c, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: Assembly-CSharp::TeamRecipe
-  genreName: "\uC544\uC2A4\uB2EC \uD06C\uB85C\uB2C8\uD074: \uB9AC\uBD80\uD2B8"
+  genreName: Chronicles of Throne
   reqPlanner: 10
   reqProgrammer: 20
   reqArt: 20
