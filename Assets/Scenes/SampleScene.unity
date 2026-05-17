@@ -3010,14 +3010,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2870082747174976886, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -225.00005
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870082747174976886, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.4999695
-      objectReference: {fileID: 0}
     - target: {fileID: 6426146928023676164, guid: 9c34628c068a35743acbbb1c6b2d4f27, type: 3}
       propertyPath: IconImage
       value: 

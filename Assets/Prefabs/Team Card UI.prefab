@@ -1586,6 +1586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TeamCardUI
   recipe: {fileID: 11400000, guid: 51c7fe8ba759f8a40b28eeb52daaae95, type: 2}
   genreNameText: {fileID: 2382478990193078685}
+  IconImage: {fileID: 8917670554206719840}
   plusButton: {fileID: 1081916927882399612}
   minusButton: {fileID: 6808050342942096317}
   maxPlusButton: {fileID: 7556861136558951475}
@@ -1596,7 +1597,7 @@ MonoBehaviour:
   teamCntText: {fileID: 8333914306807098977}
   teamCPSText: {fileID: 6945757052911517574}
   earningPopupText: {fileID: 5464517253912412711}
-  lockedOverlayImage: {fileID: 0}
+  lockedOverlayImage: {fileID: 3197036703826710924}
 --- !u!1 &6696316435007834286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5730146531769815620
 RectTransform:
   m_ObjectHideFlags: 0
