@@ -14,13 +14,12 @@ public class TeamRecipe : ScriptableObject
     [Header("CPS")]
     public float cpsReward;
 
-    [Header("ScrollCard")]
-    public GameObject TeamCardImage;
-
     public int teamCount;
+    public bool isUnlocked;
 
     void OnEnable()
     {
         teamCount = 0;
+        isUnlocked = false;
     }
 }

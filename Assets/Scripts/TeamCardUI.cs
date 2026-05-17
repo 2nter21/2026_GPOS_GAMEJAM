@@ -19,6 +19,7 @@ public class TeamCardUI : MonoBehaviour
     public TextMeshProUGUI teamCntText;
     public TextMeshProUGUI teamCPSText;
     public TextMeshProUGUI earningPopupText;
+    public Image lockedOverlayImage;
 
     private float earningPopupTimer = 0f;
     private const float earningPopupInterval = 1f;
@@ -154,6 +155,14 @@ public class TeamCardUI : MonoBehaviour
         if(earningPopupText != null)
         {
             earningPopupText.gameObject.SetActive(false);
+        }
+    }
+
+    public void UnLockRecipe()
+    {
+        if(lockedOverlayImage != null)
+        {
+            lockedOverlayImage.gameObject.SetActive(false);
         }
     }
 }

@@ -8,7 +8,7 @@ public class TeamManager : MonoBehaviour
 {
     public static TeamManager Instance;
 
-    public List<TeamRecipe> teamRecipes;
+    public List<TeamCardUI> teamRecipeUIs;
 
     [Header("Current Members")]
     public int allPlanner;
@@ -66,6 +66,21 @@ public class TeamManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void CheckTeamsToUnlock()
+    {
+        foreach(TeamCardUI teamCard in teamRecipeUIs)
+        {
+            if(!teamCard.recipe.isUnlocked)
+            {
+                if(allPlanner >= teamCard.recipe.reqPlanner/2f && allProgrammer >= teamCard.recipe.reqProgrammer/2f && allArt >= teamCard.recipe.reqArt/2f)
+                {
+                    teamCard.UnLockRecipe();
+                    Debug.Log($"Unlocked {teamCard.recipe.genreName} team recipe!");
+                }
+            }
+        }
     }
 
     public bool TryDisbandTeam(TeamRecipe recipe)
@@ -162,6 +177,8 @@ public class TeamManager : MonoBehaviour
                 remainingArt++;
                 break;
         }
+
+        CheckTeamsToUnlock();
 
         UpdateMemberCountUI();
     }
