@@ -79,7 +79,6 @@ public class TeamManager : MonoBehaviour
                 if(allPlanner >= teamCard.recipe.reqPlanner/2f && allProgrammer >= teamCard.recipe.reqProgrammer/2f && allArt >= teamCard.recipe.reqArt/2f)
                 {
                     teamCard.UnLockRecipe();
-                    Debug.Log($"Unlocked {teamCard.recipe.genreName} team recipe!");
                 }
             }
         }
